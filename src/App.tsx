@@ -1,18 +1,22 @@
 import { useState } from "react";
 
+const App = ()=> {
+    const [n,setN] = useState(0);
 
-const App = () => {
-    const [name, setName] = useState('Wesley');
 
-    const handleClick = ()=> {
-        setName('Isaias')
+    const handleMinus = () => {
+        setN (n-1);
     }
 
+    const handleMore = () => {
+        setN (n+1);
+    }
 
     return (
         <div>
-            Meu nome é {name}.
-            <button onClick={handleClick}>Clique aqui</button>
+            <button onClick={handleMinus}>-</button>
+            <div>{n}</div>
+            <button onClick={handleMore}>+</button>
         </div>
     );
 }
