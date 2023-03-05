@@ -1,18 +1,27 @@
-import { Botao } from "./components/Botao";
+import { useState } from "react";
 
 
 export const App = () => {
-  let textodoBotao = "clic no botãoo";
-  
-  const botaoEventAction = (txt: string) => {
-    alert('Frase do app:' +txt)
+  const [show,setShow] = useState(false);
+  const handleClick = () => {
+    return (
+      setShow(!show)
+      );
   }
-  
+
   return (
     <div>
-      <Botao text = {textodoBotao}   clickFn = {botaoEventAction}/>
+
+      <button onClick = { handleClick }>{show? 'ocultar' : 'mostrar'}</button>
+
+      {show  && 
+        <div>bla bla bla
+
+        </div>
+      }
+    
     </div>
   );
 }
 
-export default App;
+export default App; 
