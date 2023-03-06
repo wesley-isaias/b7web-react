@@ -1,25 +1,12 @@
 import { useState } from "react";
+import {Botao} from './components/Botao';
 
 
-export const App = () => {
-  const [show,setShow] = useState(false);
-  const handleClick = () => {
-    return (
-      setShow(!show)
-      );
-  }
-
+ const App = () => {
+ 
   return (
     <div>
-
-      <button onClick = { handleClick }>{show? 'ocultar' : 'mostrar'}</button>
-
-      {show  && 
-        <div>bla bla bla
-
-        </div>
-      }
-    
+      <Botao />
     </div>
   );
 }
